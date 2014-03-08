@@ -1,22 +1,20 @@
-<div class="page-header">
-<h2>Skills and Goals</h2>
-</div>
-<div class="check_box_area">
-   <h3 class="page-header">What Language Do You Already Know?</h3>
-  <tr>
+
+<div class="col-md-6 well">
+   <h3>What Language Do You Already Know?</h3>
  
-    <td><%= f.collection_check_boxes(:known_language_ids, KnownLanguage.all, :id, :thelang, {}, {:type => 'checkbox', :class=>'form_checks'}) %></td>
-  </tr></br>
+    <%= f.collection_check_boxes(:known_language_ids, KnownLanguage.all, :id, :thelang, {}, {:type => 'checkbox', :class=>'form-checks checkbox'}) %>
+  
 </div>
+<div class="well col-md-6">
+  
+    <h3>What Language are You Learning?</h3>
+    <%= f.collection_select(:learning_language_ids, LearningLanguage.all, :id, :thelearn, {prompt: '-Select Language You are Learning-'}, {:class=>"form-control multiselect multiselect-icon"}) %>
+ </div> 
   <tr>
-    <td><% f.label(:learning_language_ids, "What Language are You Learning?") %></td>
-    <td><%= f.collection_select(:learning_language_ids, LearningLanguage.all, :id, :thelearn, {prompt: '-Select Language You are Learning-'}, {:class=>"form_select"}) %></td>
-  </tr></br>
-  <tr>
-  <div class="check_box_area">
+  <div class="well col-md-6">
    <h3 class="page-header">What Can We Help You Accomplish?</h3>
-  <tr>
+  
     
-    <td><%= f.collection_check_boxes(:site_interest_ids, SiteInterest.all, :id, :theinte, {}, {:class=>'form_checks'}) %></td>
-  </tr></br>
+    <%= f.collection_check_boxes(:site_interest_ids, SiteInterest.all, :id, :theinte, {}, {:class=>'form-checks'}) %>
+  
 </div>

@@ -1,15 +1,14 @@
-<div class="page-header">
-<h2>Availability and About</h2>
-</div>
 
-
+<div class="col-md-6">
 <tr>
     <td><%=f.label(:availability_ids, "Availability:") %></td>
-    <td><%= f.collection_select(:availability_ids, Availability.all, :id, :theavail, {prompt: '-Select Your Availability-'},{:class=>"form_select", :item_wrapper_class => 'inline'}) %></td>
+    <td><%= f.collection_select(:availability_ids, Availability.all, :id, :theavail, {prompt: '-Select Your Availability-'},{:class=>"form-control multiselect multiselect-icon", :item_wrapper_class => 'inline'}) %></td>
   </tr>
-
+</div>
+<div class="col-md-6">
 <tr>
     <td><%= f.label(:about_me, "Tell Us About Yourself:") %></td>
-    <td><%= f.text_area(:about_me, :placeholder=>"Why are you so cool?", :class=>"form-control")%></td>
+    <td><%= f.text_area(:about_me, :placeholder=>"Why should anyone work with you?", :class=>"form-control")%></td>
   </tr></br>
-<%= f.submit %>
+<%= f.submit :class => "btn btn-lg btn-primary" %>
+</div>

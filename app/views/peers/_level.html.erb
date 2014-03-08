@@ -1,15 +1,13 @@
-<div class="page-header">
-<h2>Level</h2>
+
+<div class="level_explanation">
+<h3><%= "The following is the most important question!" %></h3>
+  <p><strong> Hello, World </strong> = have not started </p> 
+  <p><strong> Noob </strong> = Cannot build application, actively learning" </p>
+  <p><strong> Lorem Ipsum </strong> = Need alot of help to build full application" </p>  
+  <p><strong>Deploy </strong> = Can build full working application with help" </p>
+  <p><strong>Contribute </strong>= Can build full working application without help" </p>
+  <p><strong> Scale </strong> = Could build full, SECURE, well-documented, natural flowing app deployed w/o bugs and W/O using plugins" </p>
 </div>
-
-
-<strong><%= "The following is the most important question!" %></strong></br>
-  <%= "0 = have not started" %></br> 
-  <%= "2 = Cannot build application, actively learning" %></br> 
-  <%= "4 = Need alot of help to build full application" %></br>   
-  <%= "6 = Can build full working application with help" %></br> 
-  <%= "8 = Can build full working application without help" %></br>  
-  <%= "10 = Could build full, SECURE, well-documented, natural flowing app deployed w/o bugs and W/O using plugins" %></br> 
   <tr>
     <th><%= f.label(:level, 'With that said, your level at the language you are learning:') %></th>
     <td><%= f.select(:level, 0..11, {}, {:class=>"form_select"}) %></td>
