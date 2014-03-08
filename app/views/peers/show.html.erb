@@ -1,4 +1,29 @@
-<p id="notice"><%= notice %></p>
+
+<h2><%= "#{@peer.user.username}'s peer" %></h2>
+<% if current_user == @peer.user %>
+  <%= link_to 'Edit', edit_peer_path(@peer) %>
+ <% end %>
+<em><%= "User Since #{time_ago_in_words(@peer.created_at)}" + " ago" %></em>
+</div>
+<div class="container">
+
+<div class="col-md-4 col-md-offset-5">
+		<%= @peer.about_me %>
+		</div>
+		<div class="col-md-6 ">
+			<h4 class="page-header">Known Languages</h4>
+			<p class="centered">
+			<%= @peer.known_languages.map{|u| u[:thelang]}.join(', ') %></p>
+			<h4 class="page-header">Availability</h4>
+			<%= @peer.availabilities.map{|u| u[:theavail]}.join(', ') %></br>
+		</div>
+		<div class="col-md-6">
+			<h4 class="page-header">Learning Language</h4>
+			<%= @peer.learning_languages.map{|u| u[:thelearn]}.join(', ') %></br>
+			<h4 class="page-header">Payment Type</h4>
+			<%= @peer.site_interests.map{|u| u[:theinte]}.join(', ') %></br>
+		</div>
+		</br>
 
 <%= link_to 'Edit', edit_peer_path(@peer) %> |
 <%= link_to 'Back', peers_path %>

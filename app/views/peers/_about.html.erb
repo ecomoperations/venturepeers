@@ -1,0 +1,15 @@
+<div class="page-header">
+<h2>Availability and About</h2>
+</div>
+
+
+<tr>
+    <td><%=f.label(:availability_ids, "Availability:") %></td>
+    <td><%= f.collection_select(:availability_ids, Availability.all, :id, :theavail, {prompt: '-Select Your Availability-'},{:class=>"form_select", :item_wrapper_class => 'inline'}) %></td>
+  </tr>
+
+<tr>
+    <td><%= f.label(:about_me, "Tell Us About Yourself:") %></td>
+    <td><%= f.text_area(:about_me, :placeholder=>"Why are you so cool?", :class=>"form-control")%></td>
+  </tr></br>
+<%= f.submit %>

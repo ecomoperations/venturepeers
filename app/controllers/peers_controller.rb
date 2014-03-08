@@ -24,7 +24,9 @@ class PeersController < ApplicationController
   # POST /peers
   # POST /peers.json
   def create
+
     @peer = Peer.new(peer_params)
+    @peer.user = current_user
 
     respond_to do |format|
       if @peer.save
@@ -69,6 +71,6 @@ class PeersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def peer_params
-      params[:peer]
+      params.require(:peer).permit(:user_id, :level, :about_me, {:known_language_ids => []}, :availability_ids, {:site_interest_ids => []}, :learning_language_ids)
     end
 end

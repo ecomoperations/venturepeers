@@ -1,0 +1,18 @@
+<div class="page-header">
+<h2>Level</h2>
+</div>
+
+
+<strong><%= "The following is the most important question!" %></strong></br>
+  <%= "0 = have not started" %></br> 
+  <%= "2 = Cannot build application, actively learning" %></br> 
+  <%= "4 = Need alot of help to build full application" %></br>   
+  <%= "6 = Can build full working application with help" %></br> 
+  <%= "8 = Can build full working application without help" %></br>  
+  <%= "10 = Could build full, SECURE, well-documented, natural flowing app deployed w/o bugs and W/O using plugins" %></br> 
+  <tr>
+    <th><%= f.label(:level, 'With that said, your level at the language you are learning:') %></th>
+    <td><%= f.select(:level, 0..11, {}, {:class=>"form_select"}) %></td>
+  </tr></br>
+  <tr>
+
