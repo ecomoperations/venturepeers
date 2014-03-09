@@ -1900,4 +1900,16 @@ a.list-group-item-danger.active, a.list-group-item-danger:hover, a.list-group-it
 
 .level_explanation p {
   color: black;
+}/*
+
+---------------------Index Pages----------------
+-----------------------------------------*/
+
+.info span {
+  color: #fc6e51;
+}
+
+.desc {
+  font-family: 'Open Sans';
+  color: black;
 }

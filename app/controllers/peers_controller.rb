@@ -4,7 +4,8 @@ class PeersController < ApplicationController
   # GET /peers
   # GET /peers.json
   def index
-    @peers = Peer.all
+    @peers = Peer.all.order('created_at DESC')
+  
   end
 
   # GET /peers/1

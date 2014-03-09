@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307223017) do
+ActiveRecord::Schema.define(version: 20140308233655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20140307223017) do
     t.integer "peer_id"
   end
 
+  create_table "language_needs", force: true do |t|
+    t.string   "theneed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "language_needs_ventures", id: false, force: true do |t|
+    t.integer "language_need_id"
+    t.integer "venture_id"
+  end
+
   create_table "learning_languages", force: true do |t|
     t.string   "thelearn"
     t.datetime "created_at"
@@ -47,6 +58,17 @@ ActiveRecord::Schema.define(version: 20140307223017) do
   create_table "learning_languages_peers", id: false, force: true do |t|
     t.integer "learning_language_id"
     t.integer "peer_id"
+  end
+
+  create_table "minimum_skills", force: true do |t|
+    t.string   "themin"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "minimum_skills_ventures", id: false, force: true do |t|
+    t.integer "minimum_skill_id"
+    t.integer "venture_id"
   end
 
   create_table "peers", force: true do |t|
@@ -66,6 +88,28 @@ ActiveRecord::Schema.define(version: 20140307223017) do
     t.string   "theinte"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "type_payments", force: true do |t|
+    t.string   "thepay"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "type_payments_ventures", id: false, force: true do |t|
+    t.integer "type_payment_id"
+    t.integer "venture_id"
+  end
+
+  create_table "type_ventures", force: true do |t|
+    t.string   "thetype"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "type_ventures_ventures", id: false, force: true do |t|
+    t.integer "type_venture_id"
+    t.integer "venture_id"
   end
 
   create_table "users", force: true do |t|
@@ -88,5 +132,13 @@ ActiveRecord::Schema.define(version: 20140307223017) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "ventures", force: true do |t|
+    t.integer  "user_id"
+    t.string   "venture_name"
+    t.text     "about_venture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

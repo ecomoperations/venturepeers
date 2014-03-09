@@ -1,0 +1,17 @@
+<%= form_for(@venture) do |f| %>
+  <% if @venture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@venture.errors.count, "error") %> prohibited this venture from being saved:</h2>
+
+      <ul>
+      <% @venture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
