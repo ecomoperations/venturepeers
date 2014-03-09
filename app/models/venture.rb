@@ -8,9 +8,9 @@ class Venture < ActiveRecord::Base
 	has_and_belongs_to_many :type_payments
 	has_and_belongs_to_many :minimum_skills
 
-	validates :project_name, :presence => true
+	validates :venture_name, :presence => true
 	
-	validates :project_name, length: { :in => 4..80}
-    validates :about_project, length: { :in => 25..800 }
-    validates_presence_of :type_payments, :type_projects, :language_needs
+	validates :venture_name, length: { :in => 4..80}
+    validates :about_venture, length: { :in => 25..800 }
+    validates_presence_of :type_payments, :type_ventures, :language_needs
 end

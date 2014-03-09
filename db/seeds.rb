@@ -5,6 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Availability.delete_all
+KnownLanguage.delete_all
+LearningLanguage.delete_all
+SiteInterest.delete_all
+TypeVenture.delete_all
+LanguageNeed.delete_all
+TypePayment.delete_all
+MinimumSkill.delete_all
+
 Availability.create(:theavail => "Nights and Weekends")
 Availability.create(:theavail => "Most of the Time")
 Availability.create(:theavail => "Nights Only")
@@ -29,5 +39,30 @@ LearningLanguage.create(:thelearn => "PHP")
 LearningLanguage.create(:thelearn => "Wordpress")
 
 SiteInterest.create(:theinte => "Teaching") 
-SiteInterest.create(:theinte => "Working on Projects") 
+SiteInterest.create(:theinte => "Working on ventures") 
 SiteInterest.create(:theinte => "Pair Programming") 
+
+TypeVenture.create(:thetype => "Code Review/Teacher One-Time")
+TypeVenture.create(:thetype => "Code Review/Teacher Ongoing")
+TypeVenture.create(:thetype => "Open Source Idea")
+TypeVenture.create(:thetype => "Job/Internship")
+
+LanguageNeed.create(:theneed => "HTML")
+LanguageNeed.create(:theneed => "CSS")
+LanguageNeed.create(:theneed => "Adobe Suite (Graphic Design)")
+LanguageNeed.create(:theneed => "Ruby on Rails")
+LanguageNeed.create(:theneed => "Python")
+LanguageNeed.create(:theneed => "Javascript/Node.js")
+LanguageNeed.create(:theneed => "PHP")
+LanguageNeed.create(:theneed => "WordPress")
+
+TypePayment.create(:thepay => "No Pay")
+TypePayment.create(:thepay => "Paid!")
+TypePayment.create(:thepay => "Paid on Acceptance")
+
+MinimumSkill.create(:themin => "Hello, World")
+MinimumSkill.create(:themin => "Noob")
+MinimumSkill.create(:themin => "Lorem Ipsum")
+MinimumSkill.create(:themin => "Deploy")
+MinimumSkill.create(:themin => "Contribute")
+MinimumSkill.create(:themin => "Scale")

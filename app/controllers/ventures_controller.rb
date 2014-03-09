@@ -24,8 +24,8 @@ class VenturesController < ApplicationController
   # POST /ventures
   # POST /ventures.json
   def create
-    @venture = Venture.new(venture_params)
-
+    
+    @venture = current_user.ventures.build(venture_params) 
     respond_to do |format|
       if @venture.save
         format.html { redirect_to @venture, notice: 'Venture was successfully created.' }

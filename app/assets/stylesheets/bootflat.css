@@ -18,7 +18,7 @@ body {
   font-family: 'Indie Flower', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #4FC1E9;
   background-color: white;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .navbar-header h3 a {
@@ -1912,4 +1912,12 @@ a.list-group-item-danger.active, a.list-group-item-danger:hover, a.list-group-it
 .desc {
   font-family: 'Open Sans';
   color: black;
+}
+
+.well h3 {
+  color: #fc6e51;
+}
+
+.form-control {
+  font-size: 1.3em;
 }

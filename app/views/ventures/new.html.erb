@@ -1,46 +1,102 @@
-<%= form_for(@venture) do |f| %>
-
-<div class="col-md-4 col-md-offset-1">
-  <tr>
-    <td><%= f.label(:venture_name, "Venture Name:") %></td>
-    <td><%= f.text_field(:venture_name, :placeholder => "Be Captivating!", :class=>"form-control") %></td>
-  </tr></br>
-  <div class="check_box_area">
-   <h3 class="page-header">What Language Do You Need for Your Venture?</h3>
-   <tr>    
-    <td><%= f.collection_check_boxes(:language_need_ids, LanguageNeed.all, :id, :theneed, {}, {:class=>"form_checks"}) %></td>
-  </tr></br>
-  </div>
-  </div>
-  <div class="col-md-3 col-md-offset-1">
-  <tr>
-    <td><%= f.label(:type_venture_ids, "What Type of Venture is This?") %></td>
-    <td><%= f.collection_select(:type_venture_ids, TypeVenture.all, :id, :thetype, {prompt: '-Select The Type of Venture-'}, {:class=>"form_select"} ) %></td>
-  </tr></br>
-
-  <tr> 
-
-  <th><%= f.label(:minimum_skill_ids, "Skill level must be at least:") %></th>
-    <td><%= f.collection_select(:minimum_skill_ids, MinimumSkill.all, :id, :themin, {:class=>"form_select"}) %></td>
-  </tr></br>
-  <tr>
-      <td><%= f.label(:about_venture, "Tell Everyone About Your Venture") %></td>
-    <td><%= f.text_area(:about_venture, :placeholder=>"Why is this venture so cool?", :class=>"form-control") %></td>
-  </tr></br>
-  <tr>
-    <td><%= f.label(:type_payment_ids, "Will This be a Paid Venture?") %></td>
-    <td><%= f.collection_select(:type_payment_ids, TypePayment.all, :id, :thepay, {prompt: '-Select Payment Type-'},  {:class=>"form_select"}) %></td>
-  </tr></br>
-  <tr>
-  </div>
-  
-
-  
 
 
-  <div class="actions">
-    <%= f.submit :class=>"btn btn-primary btn-lg col-md-2 col-md-offset-5" %>
-  </div>
-<% end %>
+<div class="container">
+	<div class="row form-group">
+        <div class="col-xs-12">
+            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                <li class="active"><a href="#step-1">
+                    <h4 class="list-group-item-heading">The Basics</h4>
+                    <p class="list-group-item-text">The Venture Basics</p>
+                </a></li>
+                <li class="disabled"><a href="#step-2">
+                    <h4 class="list-group-item-heading">The Language</h4>
+                    <p class="list-group-item-text">Just how good are you?</p>
+                </a></li>
+                <li class="disabled"><a href="#step-3">
+                    <h4 class="list-group-item-heading">About</h4>
+                    <p class="list-group-item-text">About the Venture</p>
+                </a></li>
+            </ul>
+        </div>
+	</div>
+	<%= form_for(@venture) do |f| %>
+  <% if @venture.errors.any? %>
+    <div class="alert alert-warning">
+      <h2><%= pluralize(@venture.errors.count, "error") %> prohibited this venture from being saved:</h2>
 
-<%= link_to 'Back', ventures_path %>
+      <ul>
+      <% @venture.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% end %>
+    <div class="row setup-content" id="step-1">
+        <div class="col-xs-12">
+            <div class="col-md-12 well text-center">
+                
+                <%= form_for(@venture) do |f| %>
+                <%= render "basic", :f => f %>
+                <button id="activate-step-2" class="btn btn-primary btn-lg">Next!</button>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-2">
+        <div class="col-xs-12">
+            <div class="col-md-12 well text-center">
+                
+                <%= render "language", :f => f %>
+                <button id="activate-step-3" class="btn btn-primary btn-lg">Next!</button>
+            </div>
+        </div>
+    </div>
+    <div class="row setup-content" id="step-3">
+        <div class="col-xs-12">
+            <div class="col-md-12 well text-center">
+                
+                <%= render "about", :f => f %>
+                <% end %>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+    
+    var navListItems = $('ul.setup-panel li a'),
+        allWells = $('.setup-content');
+
+    allWells.hide();
+
+    navListItems.click(function(e)
+    {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+            $item = $(this).closest('li');
+        
+        if (!$item.hasClass('disabled')) {
+            navListItems.closest('li').removeClass('active');
+            $item.addClass('active');
+            allWells.hide();
+            $target.show();
+        }
+    });
+    
+    $('ul.setup-panel li.active a').trigger('click');
+    
+    // DEMO ONLY //
+    $('#activate-step-2').on('click', function(e) {
+        $('ul.setup-panel li:eq(1)').removeClass('disabled');
+        $('ul.setup-panel li a[href="#step-2"]').trigger('click');
+        $(this).remove();
+    })
+
+	 $('#activate-step-3').on('click', function(e) {
+        $('ul.setup-panel li:eq(2)').removeClass('disabled');
+        $('ul.setup-panel li a[href="#step-3"]').trigger('click');
+        $(this).remove();
+    })
+ });
+</script>
