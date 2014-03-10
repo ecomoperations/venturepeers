@@ -1900,8 +1900,18 @@ a.list-group-item-danger.active, a.list-group-item-danger:hover, a.list-group-it
 
 .level_explanation p {
   color: black;
-}/*
+}
 
+.well h3 {
+  color: #fc6e51;
+}
+
+.form-control {
+  font-size: 1.3em;
+}
+
+
+/*
 ---------------------Index Pages----------------
 -----------------------------------------*/
 
@@ -1914,10 +1924,26 @@ a.list-group-item-danger.active, a.list-group-item-danger:hover, a.list-group-it
   color: black;
 }
 
-.well h3 {
+.hoverclass p {
+  font-family: 'Open Sans';
+  color: black;
+}
+
+.hoverclass strong {
+  color: #fc6e51;
+}
+/*
+---------------------Tutorials---------------------
+--------------------------------------------*/
+
+.tutorial_index {
+  border-right: 2px solid gray;
+}
+
+.tutorial_index h3 {
   color: #fc6e51;
 }
 
-.form-control {
-  font-size: 1.3em;
+.tutorial_index p {
+  font-size: 1.2em;
 }

@@ -4,14 +4,15 @@
   <% else %>
 
   <% @ventures.each do |venture| %>
-  <div class="hoverclass">
-    <h3><%= link_to "#{venture.venture_name}", venture_path(venture) %></h3></br> A venture By
-    <em><%=  link_to "#{venture.user.username}", peer_path(venture.user.peer) %></em>
-    <span> | Created </span>  <%= time_ago_in_words(venture.created_at) + " ago" %><span> | </span><strong><%= venture.type_payments.map{|u| u[:thepay]}.join(', ') %></strong><span> | </span><strong><%= venture.type_ventures.map{|u| u[:thetype]}.join(', ') %></strong></br></br>
+  <div class="hoverclass well">
+    <h3><%= link_to "#{venture.venture_name}", venture_path(venture) %></h3>
+      <span>  Created </span><%= time_ago_in_words(venture.created_at) + " ago" %></br> A venture By
+    <strong><%=  link_to "#{venture.user.username}", peer_path(venture.user.peer) %></strong>
+    <span> | </span><strong><%= venture.type_payments.map{|u| u[:thepay]}.join(', ') %></strong><span> | </span><strong><%= venture.type_ventures.map{|u| u[:thetype]}.join(', ') %></strong></br></br>
 
     <p><%= venture.about_venture %></p>
 
-    <span> Language Needs: </span><strong><%= venture.language_needs.map{|u| u[:theneed]}.join(', ') %></strong><span> | Skill Required: </span><strong><%=  %></strong></br>
+    <span> Language Needs: </span><strong><%= venture.language_needs.map{|u| u[:theneed]}.join(', ') %></strong><span> | Skill Required: </span><strong><%= venture.minimum_skills.map{|u| u[:themin]}.join(', ')  %></strong></br>
   </div>
   <% end %>
   <% end %>

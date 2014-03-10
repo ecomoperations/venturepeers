@@ -1,4 +1,6 @@
 Alpha::Application.routes.draw do
+  resources :tutorials
+
   resources :ventures
 
   devise_for :users

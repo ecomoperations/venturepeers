@@ -1,0 +1,30 @@
+<h2>Help Me With <select></select>! </h2>
+
+<div class="container">
+  <div class="col-md-6 tutorial_index">
+  <h3>Functionality</h3>
+    <% @tutorials.each do |tutorial| %>
+      <div class="well">
+        
+        <p class="pull-right"><%= tutorial.resource_languages.map{|u| u[:thetut]}.join(', ') %> | Viewed: 12</p>
+        <h4><%= tutorial.functionality %></h4>
+      </div>
+        
+    <% end %>
+    
+  </div>
+  <div class="col-md-6 tutorial_index">
+  <h3>Suggestions</h3>
+    <% @suggestions.each do |suggestion| %>
+      <div class="well">
+        <p class="pull-right"><%= suggestion.resource_languages.map{|u| u[:thetut]}.join(',') %> | Vote Up 25 </p>
+        <h4><%= suggestion.functionality %></h4>
+        
+
+      </div>
+
+    <% end %>
+
+  </div>
+</div>
+  

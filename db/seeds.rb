@@ -14,6 +14,7 @@ TypeVenture.delete_all
 LanguageNeed.delete_all
 TypePayment.delete_all
 MinimumSkill.delete_all
+ResourceLanguage.delete_all
 
 Availability.create(:theavail => "Nights and Weekends")
 Availability.create(:theavail => "Most of the Time")
@@ -66,3 +67,13 @@ MinimumSkill.create(:themin => "Lorem Ipsum")
 MinimumSkill.create(:themin => "Deploy")
 MinimumSkill.create(:themin => "Contribute")
 MinimumSkill.create(:themin => "Scale")
+
+ResourceLanguage.create(:thetut => "HTML and CSS")
+ResourceLanguage.create(:thetut => "Ruby on Rails")
+ResourceLanguage.create(:thetut => "Adobe Suite(Graphic Design)")
+ResourceLanguage.create(:thetut => "Python")
+ResourceLanguage.create(:thetut => "JavaScript")
+ResourceLanguage.create(:thetut => "PHP")
+
+
+

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_one :peer
   has_many :ventures
+  has_many :tutorials
   validates_uniqueness_of :username
   validates_uniqueness_of :email
   validates :last_name, :length => { :in => 1..30 }
