@@ -1166,6 +1166,7 @@ blockquote {
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: white;
     background-color: black;
+
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
     color: #bfbfbf;
@@ -1742,6 +1743,7 @@ a.list-group-item-danger.active, a.list-group-item-danger:hover, a.list-group-it
 .dropdown-menu li a {
   padding: 5px 20px;
   color: white;
+  font-size: 1.5em;
 }
 .dropdown-menu li a:hover, .dropdown-menu li a:focus, .dropdown-menu .active a, .dropdown-menu .active a:hover, .dropdown-menu .active a:focus {
   color: white;
@@ -1942,6 +1944,7 @@ a.list-group-item-danger.active, a.list-group-item-danger:hover, a.list-group-it
 
 .tutorial_index h3 {
   color: #fc6e51;
+  text-decoration: underline;
 }
 
 .tutorial_index p {
@@ -1968,4 +1971,15 @@ a.list-group-item-danger.active, a.list-group-item-danger:hover, a.list-group-it
 
 .show_page em {
   color: #fc6e51;
+}
+/*
+-------------------------Conversations----------------
+----------------------------------------------------*/
+
+.conversation_page h2 {
+  color: #fc6e51;
+}
+
+.conversation_page p {
+  font-size: 1.3em;
 }

@@ -8,9 +8,5 @@
   <p><strong>Contribute </strong>= Can build full working application without help </p>
   <p><strong> Scale </strong> = Could build full, SECURE, well-documented, natural flowing app deployed w/o bugs and W/O using plugins </p>
 </div>
-  <tr>
-    <th><%= f.label(:level, 'With that said, your level at the language you are learning:') %></th>
-    <td><%= f.select(:level, 0..11, {}, {:class=>"form_select"}) %></td>
-  </tr></br>
-  <tr>
+  <%= f.collection_select(:level_ids, Level.all, :id, :thelev, {prompt: '-Select-'},  {:class=>"form-control multiselect multiselect-icon"}) %>  
 

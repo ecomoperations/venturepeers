@@ -15,6 +15,7 @@ LanguageNeed.delete_all
 TypePayment.delete_all
 MinimumSkill.delete_all
 ResourceLanguage.delete_all
+Level.delete_all
 
 Availability.create(:theavail => "Nights and Weekends")
 Availability.create(:theavail => "Most of the Time")
@@ -75,5 +76,11 @@ ResourceLanguage.create(:thetut => "Python")
 ResourceLanguage.create(:thetut => "JavaScript")
 ResourceLanguage.create(:thetut => "PHP")
 
+Level.create(:thelev => "Hello, World")
+Level.create(:thelev => "Noob")
+Level.create(:thelev => "Lorem Ipsum")
+Level.create(:thelev => "Deploy")
+Level.create(:thelev => "Contribute")
+Level.create(:thelev => "Scale")
 
 

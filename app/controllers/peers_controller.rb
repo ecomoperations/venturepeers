@@ -72,6 +72,6 @@ class PeersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def peer_params
-      params.require(:peer).permit(:user_id, :level, :about_me, {:known_language_ids => []}, :availability_ids, {:site_interest_ids => []}, :learning_language_ids)
+      params.require(:peer).permit(:user_id, :level_ids, :about_me, {:known_language_ids => []}, :availability_ids, {:site_interest_ids => []}, :learning_language_ids)
     end
 end

@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="col-md-5 conversation_page">
+    <h2>
+      <%= conversation.subject %>
+    </h2>
+    <em><%= "A Conversation with #{conversation.recipients.map{|u| u[:username]}.join(", ")}" %></em>
+  </div>
+  <div class="col-md-7">
+    <ul>
+    <div>
+      <%= content_tag_for(:li, conversation.receipts_for(current_user)) do |receipt| %>
+        <% message = receipt.message %>
+        
+        <p><%= "Sent by: #{message.sender.username}" %></p>
+        <p>
+          <%= message.body %>
+        </p>
+      <% end %>
+    </ul>
+    <%= render 'conversations/form', conversation: conversation %>
+  </div>
+</div>

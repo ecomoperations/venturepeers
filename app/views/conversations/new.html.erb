@@ -1,0 +1,30 @@
+
+
+<div class="container">
+	<div class="col-sm-5 conversation_page">
+	  	<h2>Things to note</h2>
+	  	<p>What do you want from this person?</p>
+	  		<ul>
+	  			<li>Code Review</li>
+	  			<li>Pair Program</li>
+	  			<li>Work on his project?</li>
+	  		</ul>
+	  	<p>What can you offer?</p>
+	  	<p>When are you available?</p>
+	</div>
+  
+
+
+	<div class="col-sm-7">
+	
+	<%= form_for(:conversation, url: :conversations) do |f| %>
+	  
+	  <%= f.text_field(:recipients, :value => params[:recipients], :placeholder=>"Username", :class=>"form-control") %></br>
+	  
+	  <%= f.text_field(:subject, :placeholder=>"Subject", :class=>"form-control") %></br>
+	  
+	  <%= f.text_area(:body, :placeholder=>"How can you help?, What are you looking to achieve?", :class=>"form-control") %></br>
+	  <%= f.button(:submit, :class=>"btn btn-primary btn-lg") %>
+	 <% end %>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+
+
+<div class="container conversation_page">
+	<div class="pull-right"><span><%= link_to 'Start Conversation', :new_conversation, :class=>"btn btn-primary" %></span></div>
+	<div class="col-md-6">
+		<h2 >Inbox</h2>
+	
+		<ul>
+		  <%= render current_user.mailbox.inbox %>
+		</ul>
+	</div>
+	<div class="col-md-6">
+	
+			<h2 >Sentbox</h2>
+		
+		<ul>
+		  <%= render current_user.mailbox.sentbox %>
+		</ul>
+	</div>
+
+
+	
+</div>
+
+	<!-- 	<div class="page-header">
+		<h2>Trash</h2>
+	</div>
+		<ul>
+		  <%= render current_user.mailbox.trash %>
+		</ul>
+		

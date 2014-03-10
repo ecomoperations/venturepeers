@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_one :peer
   has_many :ventures
   has_many :tutorials
+  acts_as_messageable
+
   validates_uniqueness_of :username
   validates_uniqueness_of :email
   validates :last_name, :length => { :in => 1..30 }
@@ -15,4 +17,13 @@ class User < ActiveRecord::Base
   validates :email, :length => { :in => 4..50 }
   include Gravtastic
   gravtastic
+
+  def name
+    username
+  end
+
+  def mailboxer_email(recipient)
+    
+  end
+
 end

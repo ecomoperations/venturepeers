@@ -1,0 +1,12 @@
+<div>
+<%= form_for :message, url: [:reply, conversation] do |f| %>
+  
+  <%= f.text_field :subject, :placeholder=>"Subject", :class=>"form-control" %></br>
+ 
+  <%= f.text_area :body, :placeholder=>"What do you have to say?", :class=>"form-control" %>
+  <div class="form-actions">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= submit_tag 'Cancel', type: :reset, class: 'btn btn-danger' %>
+  </div>
+<% end %>
+</div>
