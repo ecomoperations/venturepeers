@@ -1,4 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="col-md-6 show_page">
+  		<h2><%= @venture.venture_name %></h2>
+  		<% if current_user == @venture.user %>
+ 		<%= link_to 'Edit', edit_venture_path(@venture) %>
+ 		<% end %>
+ 		<div class="centered">
+	  		<em>A Venture By: <%= link_to "#{@venture.user.username}", peer_path(@venture.user.peer)  %></em>
+	  	</div>
+  		<p><%= @venture.about_venture %></p>
+  	</div>
+  	<div class="col-md-6 show_info">  
+  
+		<div class="well">
+			<h4>Type of venture</h4>
+			<p><%= @venture.type_ventures.map{|u| u[:thetype]}.join(', ') %></p>
+		</div>
+		<div class="well">
+			<h4>Language Needs</h4>
+			<p><%= @venture.language_needs.map{|u| u[:theneed]}.join(', ') %></p>
+		</div>
 
-<%= link_to 'Edit', edit_venture_path(@venture) %> |
-<%= link_to 'Back', ventures_path %>
+		<div class="well">
+			<h4>Payment Type</h4>
+			<p><%= @venture.type_payments.map{|u| u[:thepay]}.join(', ') %></p>
+		</div>
+		
+		
+        
+		<%= link_to "Message User", '#', :class=>"btn btn-primary btn-lg" %> 		
+		 
+		<%= link_to 'View Other ventures', ventures_path %>
+	</div>
+</div>
+</div>
