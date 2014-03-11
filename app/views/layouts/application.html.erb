@@ -13,6 +13,8 @@
   <%= javascript_include_tag "site.min", "data-turbolinks-track" => true %>
 
   <%= csrf_meta_tags %>
+
+  
 </head>
 <body>
 	<nav class="navbar navbar-default" role="navigation">
@@ -43,7 +45,7 @@
 
 		<% if user_signed_in? %>
 	
-             <li class="dropdown"><%= link_to "My Profile", "#", :'data-toggle' => 'dropdown', :class => 'dropdown-toggle' %>
+             <li class="dropdown"><%= link_to "#{current_user.username}", "#", :'data-toggle' => 'dropdown', :class => 'dropdown-toggle' %>
               <ul class="dropdown-menu">
                 <li><%= link_to "Edit Profile", root_path %></li>
                 

@@ -6,7 +6,7 @@
     <% if conversation.is_completely_trashed?(current_user) %>
       <%= link_to 'Untrash', [:untrash, conversation], method: :post %>
     <% else %>
-      <%= link_to 'Move to trash', [:trash, conversation], method: :post %>
+      <%= link_to '', [:trash, conversation], method: :post, :class => "glyphicon glyphicon-trash" %>
     <% end %>
   </p>
   <p> <%= "#{conversation.recipients.map{|u| u[:username]}.join(", ")}" %></p>

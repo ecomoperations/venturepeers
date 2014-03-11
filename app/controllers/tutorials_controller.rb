@@ -8,6 +8,12 @@ class TutorialsController < ApplicationController
     @suggestions = Tutorial.where(suggestion: true)
   end
 
+  def upvote
+    @tutorial = Tutorial.find(params[:id])
+    @tutorial.liked_by current_user
+    redirect_to tutorials_path
+  end
+
   # GET /tutorials/1
   # GET /tutorials/1.json
   def show

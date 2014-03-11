@@ -27,7 +27,7 @@
 		
 		
         
-		<%= link_to "Message User", '#', :class=>"btn btn-primary btn-lg" %> 		
+		<%= link_to "Message User", new_conversation_path(:recipients => @venture.user.username), :class => "btn btn-primary pull-right"%>		
 		 
 		<%= link_to 'View Other ventures', ventures_path %>
 	</div>
