@@ -12,7 +12,7 @@ module Alpha
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-        config.assets.precompile += ['bootflat.css', 'site.min.js', 'bootstrap.min.css', 'bootstrap.min.js', 'glyphicons-halflings-regular.svg' 'glyphicons-halflings-regular.eot' 'glyphicons-halflings-regular.woff' 'glyphicons-halflings-regular.ttf']
+        config.assets.precompile += ['bootflat.css', 'site.min.js', 'bootstrap.min.css', 'bootstrap.min.js']
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
