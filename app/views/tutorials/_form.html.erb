@@ -19,8 +19,7 @@
     <%= f.label :functionality %><br>
     <%= f.text_field :functionality %>
   </div>
-  <div class="field">
-    <%= f.collection_select(:resource_language_ids, ResourceLanguage.all, :id, :thetut, {prompt: '-Select-'},  {:class=>"form-control multiselect multiselect-icon"}) %>
+  <%= f.collection_select(:learning_language_ids, LearningLanguage.all, :id, :thelearn, {prompt: '-Select Language You are Learning-'}, {:class=>"form-control multiselect multiselect-icon"}) %>
   </div>
   <div class="field">
     <%= f.label :body %><br>

@@ -69,6 +69,6 @@ class VenturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def venture_params
-      params.require(:venture).permit(:type_venture_ids, {:language_need_ids => []}, :type_payment_ids, :user_id, :venture_name, :minimum_skill_ids, :about_venture)
+      params.require(:venture).permit(:type_venture_ids, {:learning_language_ids => []}, :type_payment_ids, :user_id, :venture_name, :minimum_skill_ids, :about_venture)
     end
 end

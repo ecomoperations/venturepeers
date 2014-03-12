@@ -6,7 +6,7 @@
     <% @tutorials.each do |tutorial| %>
       <div class="well">
         
-        <p class="pull-right"><%= tutorial.resource_languages.map{|u| u[:thetut]}.join(', ') %> | Viewed: 12</p>
+        <p class="pull-right"><%= tutorial.learning_languages.map{|u| u[:thelearn]}.join(', ') %> | Viewed: 12</p>
         <h4><%= link_to "#{tutorial.functionality}", tutorial_path(tutorial) %></h4>
       </div>
         
@@ -17,7 +17,7 @@
   <h3>Suggestions</h3>
     <% @suggestions.each do |suggestion| %>
       <div class="well">
-        <p class="pull-right"><%= suggestion.resource_languages.map{|u| u[:thetut]}.join(',') %> | <%= link_to "", like_tutorial_path(suggestion), method: :put, class: "glyphicon glyphicon-hand-up" %> <%= suggestion.likes.size %> </p>
+        <p class="pull-right"><%= suggestion.learning_languages.map{|u| u[:thelearn]}.join(',') %> | <%= link_to "", like_tutorial_path(suggestion), method: :put, class: "glyphicon glyphicon-hand-up" %> <%= suggestion.likes.size %> </p>
         <h4><%= link_to "#{suggestion.functionality}", tutorial_path(suggestion) %></h4>
         
 

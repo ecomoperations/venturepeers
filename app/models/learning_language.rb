@@ -1,3 +1,3 @@
 class LearningLanguage < ActiveRecord::Base
-	has_and_belongs_to_many :peers
+	belongs_to :page, :polymorphic => true
 end

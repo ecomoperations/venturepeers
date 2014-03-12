@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311195543) do
+ActiveRecord::Schema.define(version: 20140312203757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20140311195543) do
     t.string   "thelearn"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "page_id"
+    t.string   "page_type"
   end
 
   create_table "learning_languages_peers", id: false, force: true do |t|

@@ -12,7 +12,7 @@
 
     <p><%= venture.about_venture %></p>
 
-    <span> Language Needs: </span><strong><%= venture.language_needs.map{|u| u[:theneed]}.join(', ') %></strong><span> | Skill Required: </span><strong><%= venture.minimum_skills.map{|u| u[:themin]}.join(', ')  %></strong></br>
+    <span> Language Needs: </span><strong><%= venture.learning_languages.map{|u| u[:thelearn]}.join(', ') %></strong><span> | Skill Required: </span><strong><%= venture.minimum_skills.map{|u| u[:themin]}.join(', ')  %></strong></br>
   </div>
   <% end %>
   <% end %>

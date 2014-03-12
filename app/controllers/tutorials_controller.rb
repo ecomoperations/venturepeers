@@ -76,6 +76,6 @@ class TutorialsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tutorial_params
-      params.require(:tutorial).permit(:title, :functionality, :resource_language_ids, :body, :suggestion)
+      params.require(:tutorial).permit(:title, :functionality, :learning_language_ids, :body, :suggestion)
     end
 end
