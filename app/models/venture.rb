@@ -7,7 +7,7 @@ class Venture < ActiveRecord::Base
 	has_many :learning_languages, :as => :page
 	# has_and_belongs_to_many :language_needs
 	has_and_belongs_to_many :type_payments
-	has_and_belongs_to_many :minimum_skills
+	has_many :minimum_skills, :as => :skill
 
 	validates :venture_name, :presence => true
 	

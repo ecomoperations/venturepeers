@@ -6,7 +6,7 @@ class Peer < ActiveRecord::Base
 	# has_and_belongs_to_many :learning_languages
 	has_and_belongs_to_many :site_interests
 	has_and_belongs_to_many :availabilities
-	has_and_belongs_to_many :levels
+	has_many :minimum_skills, :as => :skill
 
 	validates :about_me, length: { :in => 25..800}
 	validates_presence_of :known_languages, :learning_languages, :site_interests, :availabilities
