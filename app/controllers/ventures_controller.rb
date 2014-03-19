@@ -4,7 +4,7 @@ class VenturesController < ApplicationController
   # GET /ventures
   # GET /ventures.json
   def index
-    @ventures = Venture.all
+    @ventures = Venture.all.order('created_at DESC')
   end
 
   # GET /ventures/1

@@ -4,8 +4,9 @@ class TutorialsController < ApplicationController
   # GET /tutorials
   # GET /tutorials.json
   def index
-    @tutorials = Tutorial.where(suggestion: false)
-    @suggestions = Tutorial.where(suggestion: true)
+    @search = Tutorial.search(params[:q])
+    @tutorials = @search.result.where(suggestion: false).page(params[:page]).per(5).order('created_at DESC')
+    @suggestions = @search.result.where(suggestion: true).page(params[:page]).per(5).order('created_at DESC')
   end
 
   def upvote

@@ -1,0 +1,31 @@
+<%= search_form_for(@search, remote: false) do |f| %>
+
+
+  <h4>Find Someone Who Is:</h4>
+   
+    <%= f.label(:minimum_skills_id_gteq, "At Least a:") %>
+    <%= f.collection_select(:minimum_skills_id_gteq, MinimumSkill.all, :id, :themin, {prompt: '-Any Skill'}, {:class=>"form_select"} )%>
+    
+
+    
+    
+    
+    <%= f.label(:learning_languages_id_eq, "Or Learning:") %>
+    <%= f.collection_select(:learning_languages_id_eq, LearningLanguage.all, :id, :thelearn,  {prompt: '-Any Language-'}, {:class=>"form_select"} ) %>
+    
+    
+     
+     
+    <%= f.label(:site_interests_id_eq, "Who is Interested In:") %>
+    <%= f.collection_select(:site_interests_id_eq, SiteInterest.all, :id, :theinte,  {prompt: '-Anything-'}, {:class=>"form_select"}  )  %>
+    
+     
+     <%= f.label(:availabilities_id_eq, "And Available:") %>
+    <%= f.collection_select(:availabilities_id_eq, Availability.all, :id, :theavail,  {prompt: '-Whenever-'}, {:class=>"form_select"} ) %>
+    
+    <%= f.hidden_field(:known_languages_id_eq, {value: "#{params[:learning_languages_id]}"}) %>
+     
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>

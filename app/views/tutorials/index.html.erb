@@ -1,6 +1,11 @@
-<h2>Help Me With <select></select> for! </h2>
+<h2>Help Me With <select></select>! </h2>
 
 <div class="container">
+  <%= search_form_for @search do |f| %>
+    <%= f.label(:functionality_cont, "Search") %>
+    <%= f.text_field(:functionality_cont)%>
+
+  <% end %>
   <div class="col-md-6 tutorial_index">
   <h3>Functionality</h3>
     <% @tutorials.each do |tutorial| %>
