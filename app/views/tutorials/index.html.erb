@@ -1,11 +1,21 @@
-<h2>Help Me With <select></select>! </h2>
-
 <div class="container">
+<div class="col-sm-8 col-sm-offset-1">
+  <h2>Help Me With</h2> 
+  <%= search_form_for @search do |f| %>
+  <%= f.collection_select(:learning_languages_id_eq, LearningLanguage.all, :id, :thelearn, {prompt: '-Select Language You are Learning-'}, {:class=>"form-control multiselect multiselect-icon"}) %>
+  <% end %>
+</div>
+<div class="col-sm-">
+  
+ 
+<br>
+
   <%= search_form_for @search do |f| %>
     <%= f.label(:functionality_cont, "Search") %>
     <%= f.text_field(:functionality_cont)%>
 
   <% end %>
+</div>
   <div class="col-md-6 tutorial_index">
   <h3>Functionality</h3>
     <% @tutorials.each do |tutorial| %>
