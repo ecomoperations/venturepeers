@@ -20,6 +20,8 @@ gem 'mailboxer'
 # search and sort and paginate
 gem "ransack", github: "activerecord-hackery/ransack", branch: "rails-4"
 gem 'kaminari'
+# count the number of impressions on a page for tutorials
+gem 'impressionist'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
